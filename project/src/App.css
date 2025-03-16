@@ -1,0 +1,11 @@
+.Container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #00a6ff;
+}
+.Decription {
+  
+  font-size: 30px;
+  padding: 20px;
+  height: 100vh;
+}
