@@ -2,23 +2,20 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Game from './Game/Game'
+import Input_1 from './Game/Level_1_i'
+import Input_2 from './Game/Level_2_i'
+import Input_3 from './Game/Level_3_i'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
     <div className='Container'>
       {/* Decripction */}
-      <div className='Decription'>
-        Learning React
-      </div>
+      <Input_3 />
       {/* Game Interface */}
-      <Game></Game>
     </div>
     </>
   )
 }
 
-export default App
+export default App;
