@@ -5,6 +5,7 @@ import './App.css'
 import Input_1 from './Game/Level_1_i'
 import Input_2 from './Game/Level_2_i'
 import Input_3 from './Game/Level_3_i'
+import FileHandler from './Game/Test'
 
 function App() {
   return (

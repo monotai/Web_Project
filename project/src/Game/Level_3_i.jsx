@@ -7,7 +7,14 @@ function Input_3(){
         <h1>Learning React</h1>
         <p>
             Arrow Fucntion<br />
-
+            <pre>
+                {`hello = () => {
+    return "Hello World!";
+};
+hello = () => "Hello World!";
+hello = (val) => "Hello " + val;
+hello = val => "Hello " + val;`}
+            </pre>
         </p>
         <input 
             value={path} 
