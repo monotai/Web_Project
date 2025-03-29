@@ -4,7 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Input_1 from './Game/Level_1_i'
 import Input_2 from './Game/Level_2_i'
-import Input_3 from './Game/Level_3_i'
+import Level_4 from './Game/Level_4'
 import FileHandler from './Game/Test'
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
     <>
     <div className='Container'>
       {/* Decripction */}
-      <Input_3 />
+      <Level_4></Level_4>
       {/* Game Interface */}
     </div>
     </>
