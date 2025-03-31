@@ -6,12 +6,12 @@
     background-color: #4242FA; 
     border-radius: 16px; 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
-    overflow: hidden; 
+    overflow: hidden;
   }
   
   .LeftSection {
     flex: 1; 
-    background-color: rgb(216, 24, 24) !important; 
+    background-color: rgb(189, 118, 118) !important;
     color: white;
     padding: 20px;
     display: flex;
@@ -24,7 +24,7 @@
   
   .RightSection {
     flex: 1; /* Take up equal space */
-    background-color: #4242FA; /* Blue background for the right section */
+    background-color: #fa4242; /* Blue background for the right section */
     color: white;
     padding: 20px;
     display: flex;

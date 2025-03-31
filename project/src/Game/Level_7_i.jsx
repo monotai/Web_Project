@@ -1,4 +1,4 @@
-import './Level_7.css';
+
 import React from "react";
 
 function Input_7({ onComplete }) {

@@ -23,7 +23,6 @@ function App() {
   return (
     <>
       <div className="Container">
-        <h1>React Quiz Game</h1>
         {currentLevel === 7 && <Input_7 onComplete={() => handleLevelComplete(7)} />}
         {currentLevel === 8 && <Input_8 onComplete={() => handleLevelComplete(8)} />}
       </div>

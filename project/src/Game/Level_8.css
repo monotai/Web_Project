@@ -11,7 +11,7 @@
   
   .LeftSection {
     flex: 1;
-    background-color: rgb(216, 24, 24) !important;
+    background-color: rgb(24, 123, 216) !important;
     color: white;
     padding: 20px;
     display: flex;
@@ -24,7 +24,7 @@
   
   .RightSection {
     flex: 1;
-    background-color: #4242FA;
+    background-color: #42fa5e;
     color: white;
     padding: 20px;
     display: flex;
