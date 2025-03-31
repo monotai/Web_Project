@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Level_1.css";
+import "../CSS/Level_1.css";
 
 function MadeGoal() {
   return <h1 style={{ color: "green" }}>GOAL!</h1>;
@@ -28,7 +28,7 @@ function evaluateBranch(code, expectedComponent) {
   }
 }
 
-function Level4({ onBack }) {
+function Level_4({ onBack }) {
   const [ifInput, setIfInput] = useState("");
   const [elseInput, setElseInput] = useState("");
   const [feedback, setFeedback] = useState("");
@@ -93,4 +93,4 @@ function Level4({ onBack }) {
   );
 }
 
-export default Level4;
+export default Level_4;

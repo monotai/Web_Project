@@ -1,6 +1,19 @@
+import '../CSS/Game.css';
+import pic_ture from '../assets/react.svg';
 import React, { useState } from "react";
-import Game_2 from "./Level_2_g";
-function Input_2(){
+
+function Game_2({ path = "" }) {
+    if (path === "react.svg") {
+        path = pic_ture
+    }
+    return (
+        <div className="Game">
+            <img src={path} alt="Game visual" />
+        </div>
+    );
+}
+
+function Level_2(){
     const [path, setPath] = React.useState("")
     return <>
         <div className='Description'>
@@ -14,4 +27,4 @@ function Input_2(){
         <Game_2 path={path}></Game_2>
         </>
 }
-export default Input_2;
+export default Level_2;

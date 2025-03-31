@@ -1,6 +1,18 @@
+// Arrow Functions
+import '../CSS/Game.css';
 import React, { useState } from "react";
-import Game_2 from "./Level_2_g";
-function Input_3(){
+
+function Game_3({ path = "" }) {
+    if (path === "react.svg") {
+        path = pic_ture
+    }
+    return (
+        <div className="Game">
+            <img src={path} alt="Game visual" />
+        </div>
+)};
+
+function Level_3(){
     const [path, setPath] = React.useState("")
     return <>
         <div className='Description'>
@@ -25,4 +37,4 @@ hello = val => "Hello " + val;`}
         <Game_2 path={path}></Game_2>
         </>
 }
-export default Input_3;
+export default Level_3;

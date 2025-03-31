@@ -1,8 +1,15 @@
-import Game_1 from "./Level_1_g";
-import './Level_1.css';
+import '../CSS/Level_1.css';
 import React from "react";
 
-function Input_1() {
+function Game_1({ text = "" }) {
+    return <>
+        <div className="Game">
+            <div className="center">{text}</div>
+        </div>
+        </>
+}
+
+function Level_1() {
     const [text, setText] = React.useState("");
     return (<>
         <div className='Description'>
@@ -37,4 +44,4 @@ function Input_1() {
     </>
     );
 }
-export default Input_1;
+export default Level_1;

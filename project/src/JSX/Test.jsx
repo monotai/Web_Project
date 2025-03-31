@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { readFile, writeFile, editFileContent } from './File';
+import { readFile, writeFile, editFileContent } from '../File';
 
 const FileHandler = () => {
     const [fileContent, setFileContent] = useState('');
