@@ -23,7 +23,7 @@ function Level_8({ onComplete }) {
   
     const handleKeyPress = (e) => {
       if (e.key === "Enter" && code === correctCode) {
-        onComplete(); // Move to the next level when Enter is pressed and the answer is correct
+        onComplete(); 
       }
     };
   
