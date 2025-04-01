@@ -1,3 +1,4 @@
+
 import React from "react";
 import "../CSS/Game.css";
 
@@ -65,3 +66,4 @@ function Level_7({ onComplete }) {
   }
   
 export default Level_7;
+
