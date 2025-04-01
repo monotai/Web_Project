@@ -1,31 +1,29 @@
 import React from "react";
+import Head from "./Head";
 
 function Game_9({ code = "" }) {
+    const [count, setCount] = React.useState(0);
     const correctCode = `setCount(count + 1)`;
     return (
         <>
             <div className="Game">
                 <div className="center" style={{ fontSize: "20px" }}>
-                    {code === correctCode 
+                {code === correctCode 
                         ? "🎉 Correct! You successfully updated the state using the event handler." 
                         : code 
                         ? "❌ Incorrect! Try again." 
                         : "Awaiting your answer..."}
+                <p>Current Count: {count}</p>
+                <button className="buttonClick" onClick={() => code.trim() === correctCode && setCount(count + 1)}>Click Me</button>
                 </div>
             </div>
         </>
     );
 }
 
-function Level_9({ onComplete }) {
-    const [count, setCount] = React.useState(0);
+function Level_9({ setLevel, win }) {
     const [code, setCode] = React.useState("");
     const correctCode = `setCount(count + 1)`; 
-    const handleKeyPress = (e) => {
-        if (e.key === "Enter" && code === correctCode) {
-            onComplete(); 
-        }
-    };
 
     React.useEffect(() => {
         if (code === correctCode) {
@@ -35,15 +33,16 @@ function Level_9({ onComplete }) {
 
     return (
         <>
-            {/* Left Section: Description */}
             <div className="Description">
-                <h1 className="webName">React Quiz - Level 9</h1>
+                <Head level={9} changeLevel={setLevel} isWin={win} />
                 <div className="code">
                     <p>
-                        Handle the button click event to update the `count` state!<br />
-                        Complete the code below:
+                        Welcome to Level 9! Your task is to fix the code and make the button functional.<br />
+                        Think of it as a puzzle: can you figure out the correct code to update the `count` state?<br />
+                        Complete the code below and test it in the game!
                     </p>
                     <pre>
+                        {`const [count, setCount] = useState(0);\n\n`}
                         {`function handleClick() {\n`}
                         {`  `}
                         <input
@@ -52,17 +51,12 @@ function Level_9({ onComplete }) {
                             placeholder="Type the missing code here..."
                             onChange={(e) => setCode(e.target.value)}
                             style={{ width: "200px" }}
-                            onKeyPress={handleKeyPress}
                         />
                         {`\n}`}
                     </pre>
                 </div>
             </div>
             {/* Right Section: Feedback */}
-            <div className="Game">
-                <p>Current Count: {count}</p>
-                <button onClick={() => eval(code)}>Click Me</button>
-            </div>
             <Game_9 code={code} />
         </>
     );

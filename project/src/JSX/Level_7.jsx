@@ -1,5 +1,6 @@
 import React from "react";
 import "../CSS/Game.css";
+import Head from "./Head";
 
 function Game_7({ code = "" }) {
     const correctCode = `title="React"`;
@@ -11,56 +12,57 @@ function Game_7({ code = "" }) {
                         ? "🎉 Correct! Props are passed as attributes in JSX." 
                         : code 
                         ? "Incorrect! Try again." 
-                        : "Awaiting your answer..."}
+                        : "Awaiting your answer..."
+                      }
                 </div>
             </div>
         </>
     );
 }
 
-function Level_7({ onComplete }) {
-    const [code, setCode] = React.useState("");
-    const correctCode = `title="React"`; 
-  
-    const handleKeyPress = (e) => {
-      if (e.key === "Enter" && code === correctCode) {
-        onComplete(); // Move to the next level when Enter is pressed and the answer is correct
-      }
-    };
-  
-    React.useEffect(() => {
-      if (code === correctCode) {
-        // Optionally display success feedback here
-      }
-    }, [code, correctCode]);
-  
-    return (
-      <>
-        {/* Left Section: Description and Input */}
+function Level_7({ setLevel, win }) { 
+  const [code, setCode] = React.useState("");
+  const correctCode = `title="React"`; 
+
+
+  React.useEffect(() => {
+    if (code === correctCode) {
+      // Optionally display success feedback here
+    }
+  }, [code, correctCode]);
+
+  return (
+    <>
         <div className="Description">
-          <h1 className="webName">React Quiz - Level 7</h1>
-          
+          <Head level={7} changeLevel={setLevel} isWin={win} />
           <div className="code">
             <p>
-              Help the component display the correct title by passing the `title` prop!<br />
-              Complete the code below:
+          Help the component display the correct title by passing the `title` prop!<br />
+          Complete the code below by typing the correct prop in the input box. 
+          Remember, props in JSX are passed as attributes in the format <code>propName="value"</code>.
+            </p>
+            <p>
+          For example, if you want to pass a prop named <code>name</code> with the value <code>"John"</code>, 
+          you would write: <code>name="John"</code>.
             </p>
             <pre>
-              {`<MyComponent `}
-              <input
-                value={code}
-                onChange={(e) => setCode(e.target.value)}
-                onKeyPress={handleKeyPress} // Listen for Enter key
-                placeholder="Type the missing code here..."
-              />
-              {` />`}
+          {`<MyComponent `}
+          <input
+            value={code}
+            onChange={(e) => setCode(e.target.value)}
+            placeholder="Type the missing code here..."
+          />
+          {` />`}
             </pre>
+            <p>
+          Once you type the correct code, you'll see a success message below!
+            </p>
           </div>
         </div>
 
         {/* Right Section: Feedback */}
-        <Game_7 code={code} />
-      </>
+      <Game_7 code={code} />
+    </>
     );
   }
   

@@ -1,40 +1,67 @@
 // Arrow Functions
 import '../CSS/Game.css';
 import React, { useState } from "react";
+import Head from './Head';
 
-function Game_3({ path = "" }) {
-    if (path === "react.svg") {
-        path = pic_ture
+function Game_3({ text = "" }) {
+    let code = false;
+    if (text === "() => 'Hello World!'") {
+        code = true;
     }
     return (
         <div className="Game">
-            <img src={path} alt="Game visual" />
+            <div className="center" style={{fontSize: "1.5rem"}}>
+                {code
+                    ? "🎉 Correct! This is a valid arrow function that returns 'Hello World!'." 
+                    : "Incorrect! Try again."}
+            </div>
         </div>
-)};
+    );
+}
 
-function Level_3(){
-    const [path, setPath] = React.useState("")
+function Level_3({setLevel, win}) {
+    const [text, setText] = React.useState("")
     return <>
         <div className='Description'>
-        <h1>Learning React</h1>
-        <p>
-            Arrow Fucntion<br />
+        <Head level={3} changeLevel={setLevel} isWin={win}/>
+        <div className='code'>
+        <h3>Arrow Function Examples</h3>
             <pre>
-                {`hello = () => {
+            {
+`// Basic Arrow Function
+const hello = () => {
     return "Hello World!";
 };
-hello = () => "Hello World!";
-hello = (val) => "Hello " + val;
-hello = val => "Hello " + val;`}
+
+// Simplified Arrow Function
+const hello = () => "Hello World!";
+
+// Arrow Function with Parameters
+const hello = (val) => "Hello " + val;
+
+// Further Simplified (Single Parameter)
+const hello = val => "Hello " + val;
+
+// Arrow Function with Multiple Parameters
+const add = (a, b) => a + b;
+
+// Arrow Function with Block Body
+const multiply = (a, b) => {
+    const result = a * b;
+    return result;
+};`
+            }  
             </pre>
-        </p>
+        <p>Type a valid arrow function that returns "Hello World!" in the input box below:</p>
         <input 
-            value={path} 
-            onChange={(e) => setPath(e.target.value)} 
-            placeholder="Type something..." 
+            value={text} 
+            onChange={(e) => setText(e.target.value)} 
+            placeholder="e.g., () => 'Hello World!'" 
+            style={{ marginTop: "20px", padding: "5px", width: "200px" }} 
         />
         </div>
-        <Game_3 path={path}></Game_3>
+        </div>
+        <Game_3 text={text}></Game_3>
         </>
 }
 export default Level_3;

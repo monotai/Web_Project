@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../CSS/Level_1.css";
+import Head from "./Head";
 
 // Level 4 Conditional
 
@@ -63,20 +63,26 @@ function Game_4({ firstIn, secondIn }) {
   );
 }
 
-function Level_4() {
+function Level_4({setLevel, win}) {
 
   const [firstIn, setFirstIn] = useState("");
   const [secondIn, setSecondIn] = useState("");
 
   return <>
     <div className="Description">
-      <div className="webName">Learning React</div>
-      <h3>Level 4</h3>
-      <p>Hello Welcome to my game</p>
+      <Head level={4} changeLevel={setLevel} isWin={win} />
       <div className="code">
       <pre>
         {
-`function Goal(props) {
+`function MissedGoal() {
+  return <h1>MISSED!</h1>;
+}
+
+function MadeGoal() {
+  return <h1>Goal!</h1>;
+}
+
+function Goal(props) {
   const isGoal = props.isGoal;
   if (isGoal) {
      `}</pre>

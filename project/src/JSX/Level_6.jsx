@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../CSS/Level_1.css";
+import Head from "./Head";
 
 // Level 6 Forms
 
@@ -31,7 +31,7 @@ const handleCheck = ({ firstIn, secondIn }) => {
   if (!secondCheck({ secondIn })) {
     return "Second input is incorrect!";
   }
-  return "Success! Both inputs are correct!";
+  return "🎉 Success! Both inputs are correct!";
 };
 
 function Game_6({ firstIn, secondIn }) {
@@ -46,17 +46,18 @@ function Game_6({ firstIn, secondIn }) {
   );
 }
 
-function Level_6() {
+function Level_6({setLevel, win}) {
   const [firstIn, setFirstIn] = useState("");
   const [secondIn, setSecondIn] = useState("");
 
   return (
     <>
       <div className="Description">
-        <div className="webName">Learning React</div>
-        <h3>Level 6</h3>
-        <p>Hello! Welcome to my game</p>
+        <Head level={6} changeLevel={setLevel} isWin={win} />
         <div className="code">
+          <p>
+            Your task is to recreate the structure of the <code>MyForm</code> component by entering the correct opening and closing tags for the form element.
+          </p>
           <pre>
             {`function MyForm() {
   return (
@@ -67,7 +68,7 @@ function Level_6() {
               className="inputBox"
               value={firstIn}
               onChange={(e) => setFirstIn(e.target.value)}
-              placeholder="Input here..."
+              placeholder="Enter opening tag here..."
             />
           </div>
           <pre>{`
@@ -80,7 +81,7 @@ function Level_6() {
               className="inputBox"
               value={secondIn}
               onChange={(e) => setSecondIn(e.target.value)}
-              placeholder="Input here..."
+              placeholder="Enter closing tag here..."
             />
           </div>
           <pre>{`
