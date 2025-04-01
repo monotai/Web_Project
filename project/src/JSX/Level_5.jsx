@@ -3,17 +3,8 @@ import "../CSS/Level_1.css";
 
 // Level 5 Events
 
-// function Football() {
-//   const shoot = () => {
-//     alert("Great Shot!");
-//   };
-
-//   return <button onClick={shoot}>Take the shot!</button>;
-// }
-
-
 function fistCheck({ firstIn }) {
-  return firstIn === '<button onClick={shoot}>Take the shot!</button>';
+  return firstIn === "onClick={shoot}";
 }
 
 const handleCheck = ({ firstIn }) => {
@@ -51,17 +42,19 @@ function Level_5() {
     alert("Great Shot!");
   };
 
-}`}
+  return (
+    <button `}
           </pre>
           <div className="inputType" style={{ marginLeft: "40px" }}>
-            return <input
+            <input
               className="inputBox"
               value={firstIn}
               onChange={(e) => setFirstIn(e.target.value)}
-              placeholder="Type the input here..."
+              placeholder="Type input here..."
             />
-            {`;`}
           </div>
+          <pre>{`>Take the shot!</button>
+}`}</pre>
         </div>
       </div>
       <Game_5 firstIn={firstIn} />
