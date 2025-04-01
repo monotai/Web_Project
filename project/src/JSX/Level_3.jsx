@@ -34,7 +34,7 @@ hello = val => "Hello " + val;`}
             placeholder="Type something..." 
         />
         </div>
-        <Game_2 path={path}></Game_2>
+        <Game_3 path={path}></Game_3>
         </>
 }
 export default Level_3;

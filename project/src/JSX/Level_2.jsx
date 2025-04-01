@@ -8,7 +8,7 @@ function Game_2({ path = "" }) {
     }
     return (
         <div className="Game">
-            <img src={path} alt="Game visual" />
+            <img id='reactImage' src={path} alt="Game visual" />
         </div>
     );
 }
@@ -21,7 +21,7 @@ function Level_2(){
         <input 
             value={path} 
             onChange={(e) => setPath(e.target.value)} 
-            placeholder="Type something..." 
+            placeholder="" 
         />
         </div>
         <Game_2 path={path}></Game_2>

@@ -11,22 +11,25 @@ import Level_7 from './JSX/Level_7'
 import Level_8 from './JSX/Level_8'
 
 function App() {
-  const [currentLevel, setCurrentLevel] = useState(7); // Start with Level 7
+  // const [currentLevel, setCurrentLevel] = useState(7); // Start with Level 7
 
-  const handleLevelComplete = (level) => {
-    if (level === 7) {
-      setCurrentLevel(8); // Unlock Level 8 when Level 7 is completed
-    } else if (level === 8) {
-      alert("🎉 Congratulations! You've completed all levels!"); // End of the game
-    }
-  };
+  // const handleLevelComplete = (level) => {
+  //   if (level === 7) {
+  //     setCurrentLevel(8); // Unlock Level 8 when Level 7 is completed
+  //   } else if (level === 8) {
+  //     alert("🎉 Congratulations! You've completed all levels!"); // End of the game
+  //   }
+  // };
 
   return (
-    <>
-      <div className="Container">
+    <> 
+    <div className='Container'>
+    <Level_3 />
+    </div>
+      {/* <div className="Container">
         {currentLevel === 7 && <Level_7 onComplete={() => handleLevelComplete(7)} />}
         {currentLevel === 8 && <Level_8 onComplete={() => handleLevelComplete(8)} />}
-      </div>
+      </div> */}
     </>
   );
 }

@@ -14,8 +14,8 @@ function Level_1() {
     return (<>
         <div className='Description'>
             <h1>Learning React</h1>
-            <p>
-<pre>
+            <div className='code'>
+            <pre>
 {
 `function Game_1() {
     return (
@@ -25,9 +25,10 @@ function Level_1() {
 `}
 </pre>
 <input 
+    id='input_1'
     value={text} 
     onChange={(e) => setText(e.target.value)} 
-    placeholder="Type something..." 
+    placeholder="" 
 />
 <pre>
 {
@@ -38,7 +39,7 @@ function Level_1() {
 }`
 }
 </pre>
-            </p>
+            </div>
         </div>
         <Game_1 text={text}></Game_1>
     </>
