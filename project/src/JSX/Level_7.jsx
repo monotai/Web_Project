@@ -8,7 +8,7 @@ function Game_7({ code = "" }) {
             <div className="Game">
                 <div className="center" style={{fontSize: "1.5rem"}}>
                     {code === correctCode 
-                        ? "Correct! Props are passed as attributes in JSX." 
+                        ? "🎉 Correct! Props are passed as attributes in JSX." 
                         : code 
                         ? "Incorrect! Try again." 
                         : "Awaiting your answer..."}

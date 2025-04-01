@@ -5,11 +5,11 @@ function Game_8({ code = "" }) {
     return (
         <>
             <div className="Game">
-                <div className="center">
+                <div className="center" style={{ fontSize: "20px" }}>
                     {code === correctCode 
-                        ? "Correct! `useState` is used to manage state in functional components." 
+                        ? "🎉 Correct! `useState` is used to manage state in functional components." 
                         : code 
-                        ? "Incorrect! Try again." 
+                        ? "❌ Incorrect! Try again." 
                         : "Awaiting your answer..."}
                 </div>
             </div>
@@ -19,7 +19,7 @@ function Game_8({ code = "" }) {
 
 function Level_8({ onComplete }) {
     const [code, setCode] = React.useState("");
-    const correctCode = `React.useState(0)`; // Correct code snippet
+    const correctCode = `useState(0)`; // Correct code snippet
   
     const handleKeyPress = (e) => {
       if (e.key === "Enter" && code === correctCode) {
@@ -35,41 +35,29 @@ function Level_8({ onComplete }) {
   
     return (
       <>
-        <div className="InputFeedbackContainer">
           {/* Left Section: Description */}
-          <div className="LeftSection">
             <div className="Description">
-              <h1>React Quiz - Level 8</h1>
-              <p>
-                Help initialize the state variable `count` with a default value of `0`!<br />
-                Complete the code below:
-              </p>
+              <h1 className="webName">React Quiz - Level 8</h1>
+              <div className="code">
+                <p>
+                  Help initialize the state variable `count` with a default value of `0`!<br />
+                  Complete the code below:
+                </p>
+                <pre>
+                  {`import { useState } from "react";\n\nconst [count, setCount] = `}
+                  <input
+                    type="text"
+                    value={code}
+                    placeholder="Type the missing code here..."
+                    onChange={(e) => setCode(e.target.value)}
+                    style={{ width: "100px"}}
+                  />
+                  {`;`}
+                </pre>
+              </div>
             </div>
-            <div className="InputSection">
-            <pre>
-                {`import { useState } from "react";\n\nconst [count, setCount] = `}
-                <input
-                  type="text"
-                  value={code}
-                  placeholder="Type the missing code here..."
-                  onChange={(e) => onCodeChange(e.target.value)}
-                />
-                {`;`}
-              </pre>
-            </div>
-          </div>
-  
           {/* Right Section: Feedback */}
-          <div className="RightSection">
-            <div className="FeedbackSection">
-              {code === correctCode
-                ? "🎉 Correct! The state variable has been initialized successfully."
-                : code
-                ? "❌ Incorrect! Try again."
-                : "Waiting for correct state initialization..."}
-            </div>
-          </div>
-        </div>
+          <Game_8 code={code} />
       </>
     );
   }
