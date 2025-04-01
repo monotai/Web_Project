@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import "../CSS/Level_1.css";
-
+import Head from "./Head";
 // Level 5 Events
 
 function fistCheck({ firstIn }) {
@@ -11,7 +10,7 @@ const handleCheck = ({ firstIn }) => {
   if (!fistCheck({ firstIn })) {
     return "Please input it!";
   }
-  return "Success! The input is correct!";
+  return "🎉 Success! The input is correct!";
 };
 
 function Game_5({ firstIn }) {
@@ -32,8 +31,7 @@ function Level_5() {
   return (
     <>
       <div className="Description">
-        <div className="webName">Learning React</div>
-        <h3>Level 5</h3>
+        <Head level={5} />
         <div className="code">
           <pre>
             {`function Football() {

@@ -11,6 +11,7 @@ import Level_5 from './JSX/Level_5'
 import Level_6 from './JSX/Level_6'
 import Level_7 from './JSX/Level_7'
 import Level_8 from './JSX/Level_8'
+import Level_9 from './JSX/Level_9'
 
 function App() {
   // const [currentLevel, setCurrentLevel] = useState(7); // Start with Level 7
@@ -26,7 +27,7 @@ function App() {
   return (
     <> 
     <div className='Container'>
-    <Level_5 />
+    <Level_1 />
     </div>
       {/* <div className="Container">
         {currentLevel === 7 && <Level_7 onComplete={() => handleLevelComplete(7)} />}

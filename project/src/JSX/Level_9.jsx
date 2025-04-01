@@ -1,16 +1,20 @@
 import React from "react";
+import Head from "./Head";
 
 function Game_9({ code = "" }) {
+    const [count, setCount] = React.useState(0);
     const correctCode = `setCount(count + 1)`;
     return (
         <>
             <div className="Game">
                 <div className="center" style={{ fontSize: "20px" }}>
-                    {code === correctCode 
+                {code === correctCode 
                         ? "🎉 Correct! You successfully updated the state using the event handler." 
                         : code 
                         ? "❌ Incorrect! Try again." 
                         : "Awaiting your answer..."}
+                <p>Current Count: {count}</p>
+                <button className="buttonClick" onClick={() => code.trim() === correctCode && setCount(count + 1)}>Click Me</button>
                 </div>
             </div>
         </>
@@ -18,11 +22,10 @@ function Game_9({ code = "" }) {
 }
 
 function Level_9({ onComplete }) {
-    const [count, setCount] = React.useState(0);
     const [code, setCode] = React.useState("");
     const correctCode = `setCount(count + 1)`; 
     const handleKeyPress = (e) => {
-        if (e.key === "Enter" && code === correctCode) {
+        if (e.key === "Enter" && code.trim() === correctCode) {
             onComplete(); 
         }
     };
@@ -37,7 +40,7 @@ function Level_9({ onComplete }) {
         <>
             {/* Left Section: Description */}
             <div className="Description">
-                <h1 className="webName">React Quiz - Level 9</h1>
+                <Head level={9} />
                 <div className="code">
                     <p>
                         Handle the button click event to update the `count` state!<br />
@@ -52,17 +55,13 @@ function Level_9({ onComplete }) {
                             placeholder="Type the missing code here..."
                             onChange={(e) => setCode(e.target.value)}
                             style={{ width: "200px" }}
-                            onKeyPress={handleKeyPress}
+                            onKeyDown={handleKeyPress}
                         />
                         {`\n}`}
                     </pre>
                 </div>
             </div>
             {/* Right Section: Feedback */}
-            <div className="Game">
-                <p>Current Count: {count}</p>
-                <button onClick={() => eval(code)}>Click Me</button>
-            </div>
             <Game_9 code={code} />
         </>
     );

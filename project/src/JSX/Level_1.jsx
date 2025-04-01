@@ -1,5 +1,5 @@
-import '../CSS/Level_1.css';
 import React from "react";
+import Head from "./Head";
 
 function Game_1({ text = "" }) {
     return <>
@@ -13,7 +13,7 @@ function Level_1() {
     const [text, setText] = React.useState("");
     return (<>
         <div className='Description'>
-            <h1 className='webName'>Learning React</h1>
+            <Head level={1} />
             <div className='code'>
             <pre>
 {

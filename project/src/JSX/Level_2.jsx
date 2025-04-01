@@ -1,6 +1,7 @@
 import '../CSS/Game.css';
 import pic_ture from '../assets/react.svg';
 import React, { useState } from "react";
+import Head from './Head';
 
 function Game_2({ path = "" }) {
     if (path === "react.svg") {
@@ -17,7 +18,7 @@ function Level_2(){
     const [path, setPath] = React.useState("")
     return <>
         <div className='Description'>
-        <h1 className='webName'>Learning React</h1>
+        <Head level={2} />
         <input 
             value={path} 
             onChange={(e) => setPath(e.target.value)} 

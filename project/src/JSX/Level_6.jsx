@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../CSS/Level_1.css";
+import Head from "./Head";
 
 // Level 6 Forms
 
@@ -31,7 +31,7 @@ const handleCheck = ({ firstIn, secondIn }) => {
   if (!secondCheck({ secondIn })) {
     return "Second input is incorrect!";
   }
-  return "Success! Both inputs are correct!";
+  return "🎉 Success! Both inputs are correct!";
 };
 
 function Game_6({ firstIn, secondIn }) {
@@ -53,9 +53,7 @@ function Level_6() {
   return (
     <>
       <div className="Description">
-        <div className="webName">Learning React</div>
-        <h3>Level 6</h3>
-        <p>Hello! Welcome to my game</p>
+        <Head level={6} />
         <div className="code">
           <pre>
             {`function MyForm() {

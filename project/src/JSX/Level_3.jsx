@@ -1,6 +1,7 @@
 // Arrow Functions
 import '../CSS/Game.css';
 import React, { useState } from "react";
+import Head from './Head';
 
 function Game_3({ text = "" }) {
     let code = false;
@@ -23,7 +24,7 @@ function Level_3(){
     const [text, setText] = React.useState("")
     return <>
         <div className='Description'>
-        <h1 className='webName'>Learning React</h1>
+        <Head level={3} />
         <div className='code'>
         Arrow Fucntion<br />
             <pre>

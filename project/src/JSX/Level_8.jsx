@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "./Head";
 
 function Game_8({ code = "" }) {
     const correctCode = `React.useState(0)`;
@@ -37,7 +38,7 @@ function Level_8({ onComplete }) {
       <>
           {/* Left Section: Description */}
             <div className="Description">
-              <h1 className="webName">React Quiz - Level 8</h1>
+              <Head level={8} />
               <div className="code">
                 <p>
                   Help initialize the state variable `count` with a default value of `0`!<br />

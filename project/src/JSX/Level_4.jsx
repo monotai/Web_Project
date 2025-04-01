@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../CSS/Level_1.css";
+import Head from "./Head";
 
 // Level 4 Conditional
 
@@ -70,8 +70,7 @@ function Level_4() {
 
   return <>
     <div className="Description">
-      <div className="webName">Learning React</div>
-      <h3>Level 4</h3>
+      <Head level={4} />
       <div className="code">
       <pre>
         {
