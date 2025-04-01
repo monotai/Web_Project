@@ -2,39 +2,49 @@
 import '../CSS/Game.css';
 import React, { useState } from "react";
 
-function Game_3({ path = "" }) {
-    if (path === "react.svg") {
-        path = pic_ture
+function Game_3({ text = "" }) {
+    let code = false;
+    if (text === "react.svg") {
+        code = true;
     }
     return (
         <div className="Game">
-            <img src={path} alt="Game visual" />
+            <div className="center" style={{fontSize: "1.5rem"}}>
+                {code
+                    ? "🎉 Correct! Props are passed as attributes in JSX." 
+                    : code 
+                    ? "Incorrect! Try again." 
+                    : "Awaiting your answer..."}
+            </div>
         </div>
 )};
 
 function Level_3(){
-    const [path, setPath] = React.useState("")
+    const [text, setText] = React.useState("")
     return <>
         <div className='Description'>
-        <h1>Learning React</h1>
-        <p>
-            Arrow Fucntion<br />
+        <h1 className='webName'>Learning React</h1>
+        <div className='code'>
+        Arrow Fucntion<br />
             <pre>
-                {`hello = () => {
+            {
+`hello = () => {
     return "Hello World!";
 };
 hello = () => "Hello World!";
 hello = (val) => "Hello " + val;
-hello = val => "Hello " + val;`}
+hello = val => "Hello " + val;`
+            }  
             </pre>
-        </p>
         <input 
-            value={path} 
-            onChange={(e) => setPath(e.target.value)} 
-            placeholder="Type something..." 
+            value={text} 
+            onChange={(e) => setText(e.target.value)} 
+            placeholder="Type something..."
+            style={{ marginTop: "20px" }} // Increased margin for a bigger gap
         />
         </div>
-        <Game_3 path={path}></Game_3>
+        </div>
+        <Game_3 text={text}></Game_3>
         </>
 }
 export default Level_3;

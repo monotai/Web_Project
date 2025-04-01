@@ -72,7 +72,6 @@ function Level_4() {
     <div className="Description">
       <div className="webName">Learning React</div>
       <h3>Level 4</h3>
-      <p>Hello Welcome to my game</p>
       <div className="code">
       <pre>
         {

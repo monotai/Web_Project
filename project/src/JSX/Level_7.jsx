@@ -12,7 +12,8 @@ function Game_7({ code = "" }) {
                         ? "🎉 Correct! Props are passed as attributes in JSX." 
                         : code 
                         ? "Incorrect! Try again." 
-                        : "Awaiting your answer..."}
+                        : "Awaiting your answer..."
+                      }
                 </div>
             </div>
         </>

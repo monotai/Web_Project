@@ -34,7 +34,6 @@ function Level_5() {
       <div className="Description">
         <div className="webName">Learning React</div>
         <h3>Level 5</h3>
-        <p>Hello! Welcome to my game</p>
         <div className="code">
           <pre>
             {`function Football() {
@@ -42,19 +41,17 @@ function Level_5() {
     alert("Great Shot!");
   };
 
-  return (
-    <button `}
+  return (`}
           </pre>
           <div className="inputType" style={{ marginLeft: "40px" }}>
-            <input
+          {`<button`}<input
               className="inputBox"
               value={firstIn}
               onChange={(e) => setFirstIn(e.target.value)}
               placeholder="Type input here..."
-            />
+            />{`>Take the shot!</button>`}
           </div>
-          <pre>{`>Take the shot!</button>
-}`}</pre>
+          <pre>{`}`}</pre>
         </div>
       </div>
       <Game_5 firstIn={firstIn} />

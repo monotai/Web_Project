@@ -17,7 +17,7 @@ function Level_2(){
     const [path, setPath] = React.useState("")
     return <>
         <div className='Description'>
-        <h1>Learning React</h1>
+        <h1 className='webName'>Learning React</h1>
         <input 
             value={path} 
             onChange={(e) => setPath(e.target.value)} 

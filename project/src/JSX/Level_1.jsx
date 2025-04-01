@@ -13,7 +13,7 @@ function Level_1() {
     const [text, setText] = React.useState("");
     return (<>
         <div className='Description'>
-            <h1>Learning React</h1>
+            <h1 className='webName'>Learning React</h1>
             <div className='code'>
             <pre>
 {
