@@ -1,4 +1,5 @@
 import React from "react";
+import "../CSS/Game.css";
 
 function Game_7({ code = "" }) {
     const correctCode = `title="React"`;
@@ -39,7 +40,7 @@ function Level_7({ onComplete }) {
           {/* Left Section: Description and Input */}
           <div className="LeftSection">
             <div className="Description">
-              <h1>React Quiz - Level 7</h1>
+              <h1 className="webName">React Quiz - Level 7</h1>
               <p>
                 Help the component display the correct title by passing the `title` prop!<br />
                 Complete the code below:

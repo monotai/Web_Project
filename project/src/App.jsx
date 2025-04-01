@@ -24,7 +24,7 @@ function App() {
   return (
     <> 
     <div className='Container'>
-    <Level_4 />
+    <Level_7 />
     </div>
       {/* <div className="Container">
         {currentLevel === 7 && <Level_7 onComplete={() => handleLevelComplete(7)} />}
