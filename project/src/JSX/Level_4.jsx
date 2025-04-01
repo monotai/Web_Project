@@ -1,96 +1,90 @@
 import React, { useState } from "react";
 import "../CSS/Level_1.css";
 
-function MadeGoal() {
-  return <h1 style={{ color: "green" }}>GOAL!</h1>;
-}
+// Level 4 Conditional
 
-function MissedGoal() {
-  return <h1 style={{ color: "red" }}>MISSED!</h1>;
-}
+// function Goal(props) {
+//   const isGoal = props.isGoal;
+//   if (isGoal) {
+//     return <MadeGoal/>;
+//   }
+//   return <MissedGoal/>;
+// }
 
-// This function uses Babel to transpile JSX to plain JavaScript at runtime.
-function evaluateBranch(code, expectedComponent) {
-  try {
-    // Transpile the input code using Babel (preset "react" handles JSX)
-    const transformedCode = Babel.transform(code, { presets: ["react"] }).code;
-    // Wrap the transformed code in a function that receives React and our components.
-    const func = new Function("React", "MadeGoal", "MissedGoal", transformedCode);
-    const result = func(React, MadeGoal, MissedGoal);
-    // Check if the returned element is valid and of the expected type.
-    if (React.isValidElement(result) && result.type === expectedComponent) {
-      return { success: true, result };
-    } else {
-      return { success: false, error: "The returned element is not as expected." };
-    }
-  } catch (error) {
-    return { success: false, error: error.message };
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(<Goal isGoal={false} />);
+
+function fistCheck({ firstIn }) {
+  if (firstIn === "<MadeGoal/>" || firstIn === "<MadeGoal />" || firstIn === "<MadeGoal></MadeGoal>"){
+    return true;
+  }
+  else {
+    return false;
   }
 }
 
-function Level_4({ onBack }) {
-  const [ifInput, setIfInput] = useState("");
-  const [elseInput, setElseInput] = useState("");
-  const [feedback, setFeedback] = useState("");
-  const [output, setOutput] = useState(null);
+function secondCheck({ secondIn }) {
+  if (secondIn === "<MissedGoal/>" || secondIn === "<MissedGoal />" || secondIn === "<MissedGoal></MissedGoal>"){
+    return true;
+  }
+  else {
+    return false;
+  }
+}
 
-  const handleCheck = () => {
-    // Trim the inputs to remove extra whitespace
-    const ifResult = evaluateBranch(ifInput.trim(), MadeGoal);
-    const elseResult = evaluateBranch(elseInput.trim(), MissedGoal);
-
-    if (!ifResult.success || !elseResult.success) {
-      const errMsg = ifResult.error || elseResult.error;
-      setFeedback(`❌ Error: ${errMsg}`);
-      setOutput(<MissedGoal />);
-    } else {
-      setFeedback("🎉 Correct! You completed Level 4!");
-      setOutput(<MadeGoal />);
+const handleCheck = ({ firstIn, secondIn }) => {
+  let showText = "";
+  if (!fistCheck({ firstIn })) {
+    showText = "first input is not correct!";
+    if (!secondCheck({ secondIn })) {
+      showText = "both inputs are not correct!";
     }
-  };
+  }
+  else {
+    if (!secondCheck({ secondIn })) {
+      showText = "second input is not correct!";
+    }
+    else {
+      showText = "success! both inputs are correct!";
+    }
+  }
+  return showText;
+}
+
+function Game_4({ firstIn, secondIn }) {
+  let showText = handleCheck({ firstIn, secondIn });
 
   return (
-    <div className="level-container">
-      <h2>Level 4: Conditional Rendering with Runtime JSX Transpilation</h2>
-      <p>
-        Complete the <code>Goal</code> function by providing the correct code
-        for each branch. You may use either a self-closing tag (e.g.,
-        <code>&lt;MadeGoal /&gt;</code>) or an explicit closing tag (e.g.,
-        <code>&lt;MadeGoal&gt;&lt;/MadeGoal&gt;</code>).
-      </p>
-      <p>For the <strong>if</strong> branch, try for example:</p>
-      <pre className="code-snippet">
-        {`return <MadeGoal />; // or return <MadeGoal></MadeGoal>;`}
-      </pre>
-      <textarea
-        className="jsx-input"
-        value={ifInput}
-        onChange={(e) => setIfInput(e.target.value)}
-        placeholder='Type code for the "if" branch here'
-      />
-      <p>For the <strong>else</strong> branch, try for example:</p>
-      <pre className="code-snippet">
-        {`return <MissedGoal />; // or return <MissedGoal></MissedGoal>;`}
-      </pre>
-      <textarea
-        className="jsx-input"
-        value={elseInput}
-        onChange={(e) => setElseInput(e.target.value)}
-        placeholder='Type code for the "else" branch here'
-      />
-      <button className="check-btn" onClick={handleCheck}>
-        Check Answer
-      </button>
-      <p className="feedback">{feedback}</p>
-      <div className="preview">
-        <h3>Output Preview:</h3>
-        {output || <MissedGoal />}
+    <div className="Game">
+      <div id="small" className="center">
+        {showText}
       </div>
-      <button className="back-btn" onClick={onBack}>
-        ← Back to Levels
-      </button>
     </div>
   );
+}
+
+function Level_4() {
+
+  const [firstIn, setFirstIn] = useState("");
+  const [secondIn, setSecondIn] = useState("");
+
+  return <>
+    <div className="Description">
+      <h1>Learning React</h1>
+      <input
+        value={firstIn}
+        onChange={(e) => setFirstIn(e.target.value)}
+        placeholder="Type the first input here..."
+      />
+      <input
+        value={secondIn}
+        onChange={(e) => setSecondIn(e.target.value)}
+        placeholder="Type the second input here..."
+      />
+    </div>
+    <Game_4 firstIn={firstIn} secondIn={secondIn} />
+  </>
+    
 }
 
 export default Level_4;

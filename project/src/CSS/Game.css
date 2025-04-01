@@ -70,3 +70,7 @@ input {
     background-color: #50b1fc; 
     box-sizing: border-box; 
 }
+
+#small {
+    font-size: 25px;
+}
