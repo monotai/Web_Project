@@ -47,15 +47,22 @@ function Level_7({ onComplete }) {
               </p>
             </div>
             <div className="InputSection">
-              <pre>
-                {`<MyComponent `}
+            <pre>
+                {`function getTitle() {\n    `}
                 <input
+                  type="text"
                   value={code}
-                  onChange={(e) => setCode(e.target.value)}
-                  onKeyPress={handleKeyPress} // Listen for Enter key
                   placeholder="Type the missing code here..."
+                  onChange={(e) => onCodeChange(e.target.value)}
                 />
-                {` />`}
+                {`\n}\n\nconst title = `}
+                <input
+                  type="text"
+                  value={callCode}
+                  placeholder="Call the function here..."
+                  onChange={(e) => onCallCodeChange(e.target.value)}
+                />
+                {`\nconsole.log(title);`}
               </pre>
             </div>
           </div>
