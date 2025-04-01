@@ -6,8 +6,8 @@ const End = () => {
         <div style={{
             margin: "auto",
             fontSize: "1.5rem",
-            background: "#F03A3A",
-            color: "white",
+            background: "#343A40", // Match the body color
+            color: "white", // White text for contrast
             padding: "40px 60px",
             borderRadius: "20px",
             display: "flex",

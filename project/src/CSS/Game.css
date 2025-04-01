@@ -1,7 +1,7 @@
 .center {
-    color: #ffffff;
+    color: #f8f9fa; /* Light gray for better readability */
     padding: 50px;
-    background-color: #f03a3a; /* Vibrant green tone */
+    background-color: #28a745; /* Vibrant green */
     border-radius: 16px;
     text-align: center;
     font-size: 60px;
@@ -13,7 +13,7 @@
     padding: 20px;
     height: 50vw;
     width: 50vw;
-    background-color: #3a86ff; /* Bright blue tone */
+    background-color: #67b0ff; /* Bright blue */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,23 +22,23 @@
 .Description {
     width: 50vw;
     height: 100vh;
-    color: #e9ecef; /* Soft off-white tone */
+    color: #212529; /* Dark gray for readability */
     padding: 0px;
     font-size: 30px;
 }
 
 .code {
     margin: 10px;
-    background-color: #14213d; /* Dark navy tone */
+    background-color: #343a40; /* Dark gray */
     padding: 20px;
-    color: #e9ecef; /* Soft off-white tone */
+    color: #e9ecef; /* Light gray for contrast */
     font-size: 14px;
 }
 
 .webName {
     margin-bottom: 20px; 
     font-size: 2.5rem; 
-    color: #e9ecef; /* Soft off-white tone */
+    color: #212529; /* Dark gray for readability */
     text-align: center;
 }
 
@@ -59,8 +59,8 @@ input {
     padding: 5px;
     border: none;
     outline: none;
-    background-color: #e9ecef; /* Soft green tone */
-    color: #14213d; /* Dark navy tone for contrast */
+    background-color: #e9ecef; /* Light gray */
+    color: #212529; /* Dark gray for contrast */
     border-radius: 4px;
 }
 #input_1 {
@@ -77,7 +77,7 @@ input {
     display: flex;
     justify-content: flex-start; 
     height: 100vh; 
-    background-color: #50b1fc; 
+    background-color: #f5f5f5; /* Very light gray */
     box-sizing: border-box; 
 }
 
@@ -94,7 +94,7 @@ input {
 }
 
 .buttonClick {
-    background-color: #df2020; /* Bright blue tone */
+    background-color: #dc3545; /* Bright red */
     color: #ffffff; /* White text for contrast */
     border: none;
     padding: 10px 20px;
@@ -105,7 +105,7 @@ input {
 
 .buttonLevel {
     margin: 0px 10px;
-    background-color: #3a86ff; /* Bright blue tone */
+    background-color: #17a2b8; /* Cyan */
     color: #ffffff; /* White text for contrast */
     border: none;
     padding: 10px 20px;
@@ -118,7 +118,7 @@ input {
     width: 320px;
     height: 320px;
     border-radius: 16px;
-    background-color: #F03A3A; /* Bright red tone */
+    background-color: #6f42c1; /* Purple */
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -169,8 +169,8 @@ input {
 }
 
 .details button {
-    background-color: #df2020; /* Bright blue tone */
-    color: #ffffff; /* White text for contrast */
+    background-color: #ffc107; /* Bright yellow */
+    color: #212529; /* Dark gray for contrast */
     border: none;
     padding: 10px 20px;
     border-radius: 5px;

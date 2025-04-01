@@ -9,7 +9,7 @@ function Game_2({ path = ""}) {
     }
     return (
         <div className="Game">
-            <img id='reactImage' src={path} alt="Game visual" />
+            <img id='reactImage' src={path} style={{ border: "none"}}/>
         </div>
     );
 }
