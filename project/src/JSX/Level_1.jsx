@@ -9,11 +9,15 @@ function Game_1({ text = "" }) {
         </>
 }
 
-function Level_1() {
+function  Level_1({ setLevel,win }) {
     const [text, setText] = React.useState("");
+
+    const is_win = (text) => {
+        return text === "Hello World!";
+    }
     return (<>
         <div className='Description'>
-            <Head level={1} />
+            <Head level={1} changeLevel={setLevel} isWin={win} />
             <div className='code'>
             <pre>
 {
@@ -28,7 +32,12 @@ function Level_1() {
     id='input_1'
     value={text} 
     onChange={(e) => setText(e.target.value)} 
-    placeholder="" 
+    placeholder="Type 'Hello World!' here"
+    onKeyDown={(e) => {
+        if (e.key === "Enter" && is_win(text)) {
+            setLevel(2);
+        }
+    }}
 />
 <pre>
 {
@@ -36,9 +45,9 @@ function Level_1() {
             </div>
         </>
     );
-}`
-}
+}`}
 </pre>
+<p>Hint: Type "Hello World!" in the input box and press Enter to proceed to the next level.</p>
             </div>
         </div>
         <Game_1 text={text}></Game_1>

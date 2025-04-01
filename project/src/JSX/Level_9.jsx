@@ -21,14 +21,9 @@ function Game_9({ code = "" }) {
     );
 }
 
-function Level_9({ onComplete }) {
+function Level_9({ setLevel, win }) {
     const [code, setCode] = React.useState("");
     const correctCode = `setCount(count + 1)`; 
-    const handleKeyPress = (e) => {
-        if (e.key === "Enter" && code.trim() === correctCode) {
-            onComplete(); 
-        }
-    };
 
     React.useEffect(() => {
         if (code === correctCode) {
@@ -38,15 +33,16 @@ function Level_9({ onComplete }) {
 
     return (
         <>
-            {/* Left Section: Description */}
             <div className="Description">
-                <Head level={9} />
+                <Head level={9} changeLevel={setLevel} isWin={win} />
                 <div className="code">
                     <p>
-                        Handle the button click event to update the `count` state!<br />
-                        Complete the code below:
+                        Welcome to Level 9! Your task is to fix the code and make the button functional.<br />
+                        Think of it as a puzzle: can you figure out the correct code to update the `count` state?<br />
+                        Complete the code below and test it in the game!
                     </p>
                     <pre>
+                        {`const [count, setCount] = useState(0);\n\n`}
                         {`function handleClick() {\n`}
                         {`  `}
                         <input
@@ -55,7 +51,6 @@ function Level_9({ onComplete }) {
                             placeholder="Type the missing code here..."
                             onChange={(e) => setCode(e.target.value)}
                             style={{ width: "200px" }}
-                            onKeyDown={handleKeyPress}
                         />
                         {`\n}`}
                     </pre>

@@ -46,15 +46,18 @@ function Game_6({ firstIn, secondIn }) {
   );
 }
 
-function Level_6() {
+function Level_6({setLevel, win}) {
   const [firstIn, setFirstIn] = useState("");
   const [secondIn, setSecondIn] = useState("");
 
   return (
     <>
       <div className="Description">
-        <Head level={6} />
+        <Head level={6} changeLevel={setLevel} isWin={win} />
         <div className="code">
+          <p>
+            Your task is to recreate the structure of the <code>MyForm</code> component by entering the correct opening and closing tags for the form element.
+          </p>
           <pre>
             {`function MyForm() {
   return (
@@ -65,7 +68,7 @@ function Level_6() {
               className="inputBox"
               value={firstIn}
               onChange={(e) => setFirstIn(e.target.value)}
-              placeholder="Input here..."
+              placeholder="Enter opening tag here..."
             />
           </div>
           <pre>{`
@@ -78,7 +81,7 @@ function Level_6() {
               className="inputBox"
               value={secondIn}
               onChange={(e) => setSecondIn(e.target.value)}
-              placeholder="Input here..."
+              placeholder="Enter closing tag here..."
             />
           </div>
           <pre>{`

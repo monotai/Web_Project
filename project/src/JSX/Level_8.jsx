@@ -2,11 +2,11 @@ import React from "react";
 import Head from "./Head";
 
 function Game_8({ code = "" }) {
-    const correctCode = `React.useState(0)`;
+    const correctCode = `useState(0)`;
     return (
         <>
             <div className="Game">
-                <div className="center" style={{ fontSize: "20px" }}>
+                <div className="center" style={{ fontSize: "1.5rem" }}>
                     {code === correctCode 
                         ? "🎉 Correct! `useState` is used to manage state in functional components." 
                         : code 
@@ -18,15 +18,9 @@ function Game_8({ code = "" }) {
     );
 }
 
-function Level_8({ onComplete }) {
+function Level_8({ setLevel, win }) {
     const [code, setCode] = React.useState("");
     const correctCode = `useState(0)`; // Correct code snippet
-  
-    const handleKeyPress = (e) => {
-      if (e.key === "Enter" && code === correctCode) {
-        onComplete(); 
-      }
-    };
   
     React.useEffect(() => {
       if (code === correctCode) {
@@ -38,7 +32,7 @@ function Level_8({ onComplete }) {
       <>
           {/* Left Section: Description */}
             <div className="Description">
-              <Head level={8} />
+              <Head level={8} changeLevel={setLevel} isWin={win} />
               <div className="code">
                 <p>
                   Help initialize the state variable `count` with a default value of `0`!<br />

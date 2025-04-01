@@ -3,7 +3,7 @@ import pic_ture from '../assets/react.svg';
 import React, { useState } from "react";
 import Head from './Head';
 
-function Game_2({ path = "" }) {
+function Game_2({ path = ""}) {
     if (path === "react.svg") {
         path = pic_ture
     }
@@ -14,18 +14,27 @@ function Game_2({ path = "" }) {
     );
 }
 
-function Level_2(){
+function Level_2({setLevel, win}) {
     const [path, setPath] = React.useState("")
     return <>
         <div className='Description'>
-        <Head level={2} />
-        <input 
-            value={path} 
-            onChange={(e) => setPath(e.target.value)} 
-            placeholder="" 
-        />
+        <Head level={2} changeLevel={setLevel} isWin={win} />
+        <div className='code'>
+            <label htmlFor="pathInput">Enter the image file name (e.g., react.svg):</label>
+            <input 
+                id="pathInput"
+                value={path} 
+                onChange={(e) => setPath(e.target.value)} 
+                placeholder="Type the file name here..." 
+                onKeyDown={(e) => {
+                    if (e.key === "Enter" && path === "react.svg") {
+                        setLevel(3);
+                    }
+                }}
+            />
         </div>
-        <Game_2 path={path}></Game_2>
+        </div>
+        <Game_2 path={path} set={setLevel}></Game_2>
         </>
 }
 export default Level_2;

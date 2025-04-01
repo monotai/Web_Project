@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { use, useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -12,27 +12,33 @@ import Level_6 from './JSX/Level_6'
 import Level_7 from './JSX/Level_7'
 import Level_8 from './JSX/Level_8'
 import Level_9 from './JSX/Level_9'
+import End from './JSX/End'
 
 function App() {
-  // const [currentLevel, setCurrentLevel] = useState(7); // Start with Level 7
-
-  // const handleLevelComplete = (level) => {
-  //   if (level === 7) {
-  //     setCurrentLevel(8); // Unlock Level 8 when Level 7 is completed
-  //   } else if (level === 8) {
-  //     alert("🎉 Congratulations! You've completed all levels!"); // End of the game
-  //   }
-  // };
+  const [currentLevel, setCurrentLevel] = useState(1);
+  const [completedLevels, setCompletedLevels] = useState(10);
+  
+  useEffect(() => {
+    if (currentLevel > completedLevels) {
+      setCompletedLevels(currentLevel);
+    }
+  }
+  , [currentLevel]);
 
   return (
     <> 
     <div className='Container'>
-    <Level_1 />
+      {currentLevel === 1 &&<Level_1 setLevel={setCurrentLevel} win={completedLevels > 1}/>}
+      {currentLevel === 2 &&<Level_2 setLevel={setCurrentLevel} win={completedLevels > 2}/>}
+      {currentLevel === 3 &&<Level_3 setLevel={setCurrentLevel} win={completedLevels > 3}/>}
+      {currentLevel === 4 &&<Level_4 setLevel={setCurrentLevel} win={completedLevels > 4}/>}
+      {currentLevel === 5 &&<Level_5 setLevel={setCurrentLevel} win={completedLevels > 5}/>}
+      {currentLevel === 6 &&<Level_6 setLevel={setCurrentLevel} win={completedLevels > 6}/>}
+      {currentLevel === 7 &&<Level_7 setLevel={setCurrentLevel} win={completedLevels > 7}/>}
+      {currentLevel === 8 &&<Level_8 setLevel={setCurrentLevel} win={completedLevels > 8}/>}
+      {currentLevel === 9 &&<Level_9 setLevel={setCurrentLevel} win={completedLevels > 9}/>}
+      {currentLevel === 10 &&<End setLevel={setCurrentLevel} win={completedLevels > 10}/>}
     </div>
-      {/* <div className="Container">
-        {currentLevel === 7 && <Level_7 onComplete={() => handleLevelComplete(7)} />}
-        {currentLevel === 8 && <Level_8 onComplete={() => handleLevelComplete(8)} />}
-      </div> */}
     </>
   );
 }
