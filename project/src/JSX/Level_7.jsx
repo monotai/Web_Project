@@ -1,4 +1,3 @@
-
 import React from "react";
 import "../CSS/Game.css";
 
@@ -22,7 +21,7 @@ function Game_7({ code = "" }) {
 
 function Level_7({ onComplete }) {
     const [code, setCode] = React.useState("");
-    const correctCode = `title="React"`; // Correct code snippet
+    const correctCode = `title="React"`; 
   
     const handleKeyPress = (e) => {
       if (e.key === "Enter" && code === correctCode) {
