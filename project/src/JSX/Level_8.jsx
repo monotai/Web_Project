@@ -46,13 +46,13 @@ function Level_8({ onComplete }) {
               </p>
             </div>
             <div className="InputSection">
-              <pre>
-                {`const [count, setCount] = `}
+            <pre>
+                {`import { useState } from "react";\n\nconst [count, setCount] = `}
                 <input
+                  type="text"
                   value={code}
-                  onChange={(e) => setCode(e.target.value)}
-                  onKeyPress={handleKeyPress} // Listen for Enter key
                   placeholder="Type the missing code here..."
+                  onChange={(e) => onCodeChange(e.target.value)}
                 />
                 {`;`}
               </pre>
