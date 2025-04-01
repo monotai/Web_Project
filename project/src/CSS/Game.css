@@ -35,16 +35,26 @@
     font-size: 14px;
 }
 
-.Description h1 {
+.webName {
     margin-bottom: 20px; 
     font-size: 2.5rem; 
     color: #e9ecef; /* Soft off-white tone */
     text-align: center;
 }
 
-input {
+.code pre {
+    margin: auto;
+}
+
+.inputType {
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.inputBox {
     display: block;
-    margin: 0 auto;
+    margin: auto 5px;
     width: 170px;
     padding: 5px;
     border: none;

@@ -70,34 +70,37 @@ function Level_4() {
 
   return <>
     <div className="Description">
-      <h1>Learning React</h1>
+      <div className="webName">Learning React</div>
+      <h3>Level 4</h3>
+      <p>Hello Welcome to my game</p>
       <div className="code">
       <pre>
-        {`
-        Level 4 Conditional
-
-function Goal(props) {
+        {
+`function Goal(props) {
   const isGoal = props.isGoal;
   if (isGoal) {
      `}</pre>
-    return <input
+     <div className="inputType" style={{ marginLeft: "40px" }}>
+      return <input
+        className="inputBox"
         value={firstIn}
         onChange={(e) => setFirstIn(e.target.value)}
         placeholder="Type the first input here..."
       />{`;`}
-    <pre>{`
-  }
-   `}</pre>
+     </div>
+    
+    <pre>{
+`  }`}</pre>
+  <div className="inputType" style={{ marginLeft: "15px" }}>
   return <input
+        className="inputBox"
         value={secondIn}
         onChange={(e) => setSecondIn(e.target.value)}
         placeholder="Type the second input here..."
       />{`;`}
-  <pre>{`
-}
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<Goal isGoal={false} />);`}
+  </div>
+  <pre>{
+`}`}
       </pre>
       </div>
             
