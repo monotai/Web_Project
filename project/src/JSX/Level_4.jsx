@@ -68,13 +68,19 @@ function Level_4({setLevel, win}) {
   const [firstIn, setFirstIn] = useState("");
   const [secondIn, setSecondIn] = useState("");
 
-  return <>
-    <div className="Description">
-      <Head level={4} changeLevel={setLevel} isWin={win} />
-      <div className="code">
-      <pre>
-        {
-`function MissedGoal() {
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter" && handleCheck({ firstIn, secondIn }) === "success! both inputs are correct!") {
+      setLevel((prevLevel) => prevLevel + 1);
+    }
+  };
+
+  return (
+    <>
+      <div className="Description">
+        <Head level={4} changeLevel={setLevel} isWin={win} />
+        <div className="code">
+          <pre>
+            {`function MissedGoal() {
   return <h1>MISSED!</h1>;
 }
 
@@ -85,34 +91,38 @@ function MadeGoal() {
 function Goal(props) {
   const isGoal = props.isGoal;
   if (isGoal) {
-     `}</pre>
-     <div className="inputType" style={{ marginLeft: "40px" }}>
-      return <input
-        className="inputBox"
-        value={firstIn}
-        onChange={(e) => setFirstIn(e.target.value)}
-        placeholder="Type the first input here..."
-      />{`;`}
-     </div>
-    
-    <pre>{
-`  }`}</pre>
-  <div className="inputType" style={{ marginLeft: "15px" }}>
-  return <input
-        className="inputBox"
-        value={secondIn}
-        onChange={(e) => setSecondIn(e.target.value)}
-        placeholder="Type the second input here..."
-      />{`;`}
-  </div>
-  <pre>{
-`}`}
-      </pre>
+     `}
+          </pre>
+          <div className="inputType" style={{ marginLeft: "40px" }}>
+            return{" "}
+            <input
+              className="inputBox"
+              value={firstIn}
+              onChange={(e) => setFirstIn(e.target.value)}
+              onKeyPress={handleKeyPress}
+              placeholder="Type the first input here..."
+            />
+            {`;`}
+          </div>
+
+          <pre>{`  }`}</pre>
+          <div className="inputType" style={{ marginLeft: "15px" }}>
+            return{" "}
+            <input
+              className="inputBox"
+              value={secondIn}
+              onChange={(e) => setSecondIn(e.target.value)}
+              onKeyPress={handleKeyPress}
+              placeholder="Type the second input here..."
+            />
+            {`;`}
+          </div>
+          <pre>{`}`}</pre>
+        </div>
       </div>
-            
-    </div>
-    <Game_4 firstIn={firstIn} secondIn={secondIn} />
-  </>
+      <Game_4 firstIn={firstIn} secondIn={secondIn} />
+    </>
+  );
     
 }
 

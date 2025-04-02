@@ -5,14 +5,14 @@ import Head from './Head';
 
 function Game_3({ text = "" }) {
     let code = false;
-    if (text === "() => 'Hello World!'") {
+    if (text === '() => "Hello World!"') {
         code = true;
     }
     return (
         <div className="Game">
             <div className="center" style={{fontSize: "1.5rem"}}>
                 {code
-                    ? "🎉 Correct! This is a valid arrow function that returns 'Hello World!'." 
+                    ? '🎉 Correct! This is a valid arrow function that returns "Hello World!".' 
                     : "Incorrect! Try again."}
             </div>
         </div>
@@ -56,8 +56,13 @@ const multiply = (a, b) => {
         <input 
             value={text} 
             onChange={(e) => setText(e.target.value)} 
-            placeholder="e.g., () => 'Hello World!'" 
+            placeholder='e.g., () => "Hello World!"'
             style={{ marginTop: "20px", padding: "5px", width: "200px" }} 
+            onKeyDown={(e) => {
+                if (e.key === "Enter" && text === '() => "Hello World!"') {
+                    setLevel(4);
+                }
+            }}
         />
         </div>
         </div>

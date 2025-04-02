@@ -4,7 +4,15 @@ import Head from "./Head";
 function Game_1({ text = "" }) {
     return <>
         <div className="Game">
-            <div className="center">{text}</div>
+            <div className="center">{text}<br />
+                <p style={{ fontSize: "1rem", color: "white" }}>
+                {text === "Hello World!"
+                        ? "🎉 Correct! Enter for go to next level"
+                        : text 
+                        ? "❌ Incorrect! Try again." 
+                        : "Awaiting your answer..."}
+                </p>
+            </div>
         </div>
         </>
 }

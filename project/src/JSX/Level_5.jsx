@@ -89,6 +89,11 @@ function Level_5({ setLevel, win }) {
               value={firstIn}
               onChange={(e) => setFirstIn(e.target.value)}
               placeholder="Type input here..."
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && text === 'onClick={shoot}') {
+                    setLevel(6);
+                }
+            }}
             />{`>Shoot!</button>`}
           </div>
           <pre>{`}`}</pre>

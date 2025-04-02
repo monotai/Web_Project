@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Head from './Head';
 
 function Game_2({ path = ""}) {
-    if (path === "react.svg") {
+    if (path === "'./react.svg'") {
         path = pic_ture
     }
     return (
@@ -20,18 +20,23 @@ function Level_2({setLevel, win}) {
         <div className='Description'>
         <Head level={2} changeLevel={setLevel} isWin={win} />
         <div className='code'>
-            <label htmlFor="pathInput">Enter the image file name (e.g., react.svg):</label>
+            <label htmlFor="pathInput">Enter the image file name ('./react.svg'):</label>
+            <div className='inputType'>
+            {`import pic_ture from `}
             <input 
                 id="pathInput"
                 value={path} 
                 onChange={(e) => setPath(e.target.value)} 
                 placeholder="Type the file name here..." 
                 onKeyDown={(e) => {
-                    if (e.key === "Enter" && path === "react.svg") {
+                    if (e.key === "Enter" && path === "'./react.svg'") {
                         setLevel(3);
                     }
                 }}
             />
+            {`;`}
+            </div>
+            
         </div>
         </div>
         <Game_2 path={path} set={setLevel}></Game_2>
